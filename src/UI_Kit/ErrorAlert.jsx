@@ -1,7 +1,7 @@
 import React from 'react'
-import {chakra, Box, Icon, Flex, useColorModeValue, Center} from '@chakra-ui/react'
+import { chakra, Box, Icon, Flex, useColorModeValue } from '@chakra-ui/react'
 
-import {BsLightningFill} from 'react-icons/bs'
+import { BsLightningFill } from 'react-icons/bs'
 
 const ErrorAlert = () => {
 	return (

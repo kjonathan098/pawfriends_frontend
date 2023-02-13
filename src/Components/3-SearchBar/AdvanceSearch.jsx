@@ -1,21 +1,36 @@
-import {Button, Center, HStack, Input, PopoverCloseButton, PopoverHeader, Radio, RadioGroup, Stack, RangeSlider, RangeSliderTrack, RangeSliderFilledTrack, RangeSliderThumb, Text} from '@chakra-ui/react'
-import React, {useContext, useEffect} from 'react'
-import {useState} from 'react'
+import {
+	Button,
+	Center,
+	HStack,
+	Input,
+	PopoverCloseButton,
+	PopoverHeader,
+	Radio,
+	RadioGroup,
+	Stack,
+	RangeSlider,
+	RangeSliderTrack,
+	RangeSliderFilledTrack,
+	RangeSliderThumb,
+	Text,
+} from '@chakra-ui/react'
+import React, { useContext } from 'react'
+import { useState } from 'react'
 import petsContext from '../../Context/AuthContext/PetsContext/PetsContex'
 import useForm from '../../CustomHooks/apiCalls/useForm'
 import useToastMessage from '../../UI_Kit/ToastMessage'
 
 const createEvent = (name, value) => {
-	return {persist: () => {}, target: {name: name, value: value}}
+	return { persist: () => {}, target: { name: name, value: value } }
 }
 
-const AdvanceSearch = ({setFlag}) => {
-	const initialState = {type: '-1', adoptionStatus: '-1', weight: [0, 100], height: [0, 110]}
+const AdvanceSearch = ({ setFlag }) => {
+	const initialState = { type: '-1', adoptionStatus: '-1', weight: [0, 100], height: [0, 110] }
 
-	const [values, handleChange, setForm] = useForm(initialState)
-	const {fetchQuery, fetchAllPets} = useContext(petsContext)
-	const [isFetching, setIsFetching] = useState(false)
-	const {errorToast} = useToastMessage()
+	const [values, handleChange] = useForm(initialState)
+	const { fetchQuery } = useContext(petsContext)
+	const [setIsFetching] = useState(false)
+	const { errorToast } = useToastMessage()
 
 	const handleQuery = async (e) => {
 		setIsFetching(true)
@@ -34,7 +49,7 @@ const AdvanceSearch = ({setFlag}) => {
 		if (params.adoption_status === '-1') params.adoption_status = null
 
 		try {
-			const qResponse = await fetchQuery({params})
+			const qResponse = await fetchQuery({ params })
 			if (!qResponse) {
 				return errorToast('No Match Found')
 			}
@@ -54,7 +69,13 @@ const AdvanceSearch = ({setFlag}) => {
 				</PopoverHeader>
 			</Center>
 			<Center>
-				<Input placeholder="Search Name" name="name" onChange={handleChange} value={values.name} width={'100%'} />
+				<Input
+					placeholder="Search Name"
+					name="name"
+					onChange={handleChange}
+					value={values.name}
+					width={'100%'}
+				/>
 			</Center>
 			<HStack mt={5}>
 				<RadioGroup

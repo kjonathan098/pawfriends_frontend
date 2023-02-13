@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from 'react'
+import { useContext, useEffect, useState } from 'react'
 import authContext from '../../Context/AuthContext/AuthContext'
 import petsContext from '../../Context/AuthContext/PetsContext/PetsContex'
 
@@ -7,8 +7,8 @@ function useModalButtons(pet) {
 	const [adoptBtnDis, setAdoptBtnDis] = useState(false)
 	const [returnBtnDis, setReturnBtnDis] = useState(true)
 
-	const {userAdoptedPet, fetchUserPets, loadingUserPets} = useContext(petsContext)
-	const {isLoggedIn} = useContext(authContext)
+	const { userAdoptedPet } = useContext(petsContext)
+	const { isLoggedIn } = useContext(authContext)
 
 	// isDisable
 
@@ -81,7 +81,7 @@ function useModalButtons(pet) {
 		btnHandler(res)
 	}, [userAdoptedPet])
 
-	return {fosterBtnDis, adoptBtnDis, returnBtnDis, btnHandler}
+	return { fosterBtnDis, adoptBtnDis, returnBtnDis, btnHandler }
 }
 
 export default useModalButtons

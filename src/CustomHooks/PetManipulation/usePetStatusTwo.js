@@ -1,9 +1,8 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 const usePetStatusTwo = () => {
 	const [petStatusloading, setPetStatusloading] = useState(true)
 	const [petStatusStringArray, setPetStatusStringArray] = useState([])
-	const [petStatusready, setPetStatusready] = useState(false)
 
 	const petStatusString = (pets) => {
 		let petStatus = []
@@ -29,7 +28,7 @@ const usePetStatusTwo = () => {
 		setPetStatusloading(false)
 	}
 
-	return {petStatusStringArray, petStatusloading, petStatusString}
+	return { petStatusStringArray, petStatusloading, petStatusString }
 }
 
 export default usePetStatusTwo

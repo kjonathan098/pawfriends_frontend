@@ -1,6 +1,16 @@
-import {Button, Flex, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Select, Tooltip, useBoolean, useDisclosure, VStack} from '@chakra-ui/react'
-import React, {useContext} from 'react'
-import {SearchIcon} from '@chakra-ui/icons'
+import {
+	Button,
+	Flex,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+	Select,
+	Tooltip,
+	useBoolean,
+	VStack,
+} from '@chakra-ui/react'
+import React, { useContext } from 'react'
+import { SearchIcon } from '@chakra-ui/icons'
 import AdvanceSearch from './AdvanceSearch'
 import petsContext from '../../Context/AuthContext/PetsContext/PetsContex'
 
@@ -8,11 +18,11 @@ const SearchBarMain = () => {
 	const [flag, setFlag] = useBoolean()
 	const [isOpen, setIsOpen] = React.useState(false)
 
-	const {fetchQuery} = useContext(petsContext)
+	const { fetchQuery } = useContext(petsContext)
 
 	const handleDisplay = async (e) => {
-		if (e.target.value === '-1') return fetchQuery({params: null})
-		fetchQuery({params: {type: e.target.value}})
+		if (e.target.value === '-1') return fetchQuery({ params: null })
+		fetchQuery({ params: { type: e.target.value } })
 	}
 
 	return (
@@ -33,7 +43,7 @@ const SearchBarMain = () => {
 							</Tooltip>
 						</Flex>
 					</PopoverTrigger>
-					<PopoverContent w={{md: `800px`, sm: 'auto'}} padding={5}>
+					<PopoverContent w={{ md: `800px`, sm: 'auto' }} padding={5}>
 						<AdvanceSearch setFlag={setFlag} />
 					</PopoverContent>
 				</Popover>

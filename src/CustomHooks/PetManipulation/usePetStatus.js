@@ -1,8 +1,7 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 function usePetStatus(pet) {
 	const [petStatus, setPetStatus] = useState()
-	const [usePetLoading, setUsePetLoading] = useState()
 
 	switch (pet.adoptionStatus) {
 		case 2:
@@ -17,7 +16,7 @@ function usePetStatus(pet) {
 			break
 	}
 
-	return {setPetStatus, petStatus}
+	return { setPetStatus, petStatus }
 }
 
 export default usePetStatus

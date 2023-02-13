@@ -1,5 +1,5 @@
-import {Box, Center, Heading, Text} from '@chakra-ui/react'
-import {WarningTwoIcon} from '@chakra-ui/icons'
+import { Box, Center, Heading } from '@chakra-ui/react'
+import { WarningTwoIcon } from '@chakra-ui/icons'
 
 import React from 'react'
 

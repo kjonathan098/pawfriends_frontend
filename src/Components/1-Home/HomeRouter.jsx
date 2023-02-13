@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import authContext from '../../Context/AuthContext/AuthContext'
 import HomeNoUser from './Home.NoUser'
 import HomeUser from './Home.User'
 
 const HomeRouter = () => {
-	const {isLoggedIn, loading, test} = useContext(authContext)
+	const { isLoggedIn, loading } = useContext(authContext)
 
 	if (loading) return <>Loading ...</>
 	if (!isLoggedIn) return <HomeNoUser />

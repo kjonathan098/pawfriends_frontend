@@ -1,0 +1,23 @@
+.App {
+	height: 50px;
+	background-color: transparent;
+}
+
+.navBar {
+	background-color: transparent;
+	display: flex;
+	padding: 10px;
+}
+.menuMain {
+	background-color: transparent;
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+	width: 100%;
+	align-items: center;
+}
+
+.navLkink {
+	background-color: transparent;
+	margin-right: 5rem;
+}

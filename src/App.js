@@ -1,7 +1,7 @@
 import './App.css'
 import Home from './Components/1-Home/HomeRouter'
 import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
-import { Flex, HStack, IconButton, Stack, useDisclosure, VStack } from '@chakra-ui/react'
+import { Flex, HStack, IconButton, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react'
 import AuthProvider from './Context/AuthContext/AuthProvider'
 import AuthButton from './UI_Kit/Loggin.Logout.Btn'
 import PetsMain from './Components/2-Pets/1-PetsMain'
@@ -39,7 +39,7 @@ function App() {
 									}}
 								/>
 
-								<Flex alignItems={'center'} spacing={10} w="500px" justifyContent="space-around">
+								<Flex alignItems={'center'} w="500px" justify="right">
 									<IconButton
 										size={'md'}
 										icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -48,15 +48,19 @@ function App() {
 										onClick={isOpen ? onClose : onOpen}
 									/>
 
-									<HStack display={{ base: 'none', md: 'flex' }}>
+									<HStack
+										display={{ base: 'none', md: 'flex' }}
+										w="100%"
+										justifyContent={'space-between'}
+									>
 										<NavLink to="/" className="navLkink">
-											Home
+											<Text _hover={{ color: 'green.500' }}>Home</Text>
 										</NavLink>
 										<NavLink to="/pets" className="navLkink">
-											Pets
+											<Text _hover={{ color: 'green.500' }}>Pets</Text>
 										</NavLink>
+										<AuthButton />
 									</HStack>
-									<AuthButton />
 								</Flex>
 							</div>
 						</Flex>
@@ -74,6 +78,7 @@ function App() {
 											Pets
 										</NavLink>
 									</Flex>
+									<AuthButton />
 								</Stack>
 							</VStack>
 						) : null}

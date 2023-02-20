@@ -77,7 +77,7 @@ const AdvanceSearch = ({ setFlag }) => {
 					width={'100%'}
 				/>
 			</Center>
-			<HStack mt={5}>
+			<Stack direction={{ md: 'row', sm: 'column' }} margin="10px">
 				<RadioGroup
 					name="type"
 					onChange={(newTypeValue) => {
@@ -112,7 +112,7 @@ const AdvanceSearch = ({ setFlag }) => {
 						<Radio value="2">Adopted</Radio>
 					</Stack>
 				</RadioGroup>{' '}
-			</HStack>
+			</Stack>
 			<Text mt={5}>
 				{' '}
 				Search Weight: {values.weight[0]}lbs - {values.weight[1]}lbs

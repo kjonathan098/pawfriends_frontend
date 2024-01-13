@@ -1,6 +1,5 @@
-import { Button, Center, HStack, Input, PopoverCloseButton, PopoverHeader, Radio, RadioGroup, Stack, RangeSlider, RangeSliderTrack, RangeSliderFilledTrack, RangeSliderThumb, Text } from '@chakra-ui/react'
+import { Button, Center, Input, PopoverCloseButton, PopoverHeader, Radio, RadioGroup, Stack, RangeSlider, RangeSliderTrack, RangeSliderFilledTrack, RangeSliderThumb, Text } from '@chakra-ui/react'
 import React, { useContext } from 'react'
-import { useState } from 'react'
 import petsContext from '../../Context/AuthContext/PetsContext/PetsContex'
 import useForm from '../../CustomHooks/apiCalls/useForm'
 import useToastMessage from '../../UI_Kit/ToastMessage'

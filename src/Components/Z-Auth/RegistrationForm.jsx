@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
-import {Badge, Flex, Stack, useColorModeValue, Heading, Text, Box, HStack, FormControl, FormLabel, Input, InputGroup, InputRightElement, Button, Link, useFormControl} from '@chakra-ui/react'
-import {ViewIcon, ViewOffIcon} from '@chakra-ui/icons'
+import React, { useState } from 'react'
+import { Badge, Flex, Stack, useColorModeValue, Heading, Text, Box, HStack, FormControl, FormLabel, Input, InputGroup, InputRightElement, Button, Link } from '@chakra-ui/react'
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import useForm from '../../CustomHooks/apiCalls/useForm'
 import useToastMessage from '../../UI_Kit/ToastMessage'
 import userConfig from '../../Config/User.Config'
 
-const RegistrationForm = ({setFormContent}) => {
+const RegistrationForm = ({ setFormContent }) => {
 	const [showPassword, setShowPassword] = useState(false)
 	const [values, handleChange] = useForm()
 	const [error, setError] = useState()
 	const [loading, setLoading] = useState()
-	const {showToast} = useToastMessage()
+	const { showToast } = useToastMessage()
 
 	const handleRegister = async () => {
 		setError(null)

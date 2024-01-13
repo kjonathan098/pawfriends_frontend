@@ -6,7 +6,6 @@ import petsContext from '../../Context/AuthContext/PetsContext/PetsContex'
 
 const SearchBarMain = () => {
 	const [flag, setFlag] = useBoolean()
-	const [isOpen, setIsOpen] = React.useState(false)
 
 	const { fetchQuery } = useContext(petsContext)
 

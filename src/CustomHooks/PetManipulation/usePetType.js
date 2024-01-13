@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 function usePetType() {
 	const [petTypeLoading, setPetTypeLoading] = useState(true)
@@ -28,7 +28,7 @@ function usePetType() {
 		setPetTypeLoading(false)
 	}
 
-	return {petTypeLoading, petTypeStringArray, handleType}
+	return { petTypeLoading, petTypeStringArray, handleType }
 }
 
 export default usePetType

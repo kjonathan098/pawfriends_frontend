@@ -1,9 +1,9 @@
-import {useContext, useEffect, useState} from 'react'
+import { useContext, useEffect, useState } from 'react'
 import petsContext from '../../Context/AuthContext/PetsContext/PetsContex'
 import handlePetRequest from '../../Config/Pet.Config'
 
 function useFavoritePets(pet) {
-	const {loadingUserPets, userFavorites, setUserFavorites} = useContext(petsContext)
+	const { loadingUserPets, userFavorites, setUserFavorites } = useContext(petsContext)
 	const [isFavorite, setIsFavorite] = useState()
 	const [favoriteIndex, setFavoriteIndex] = useState()
 
@@ -36,7 +36,7 @@ function useFavoritePets(pet) {
 		setIsFavorite(false)
 	}
 
-	return {isFavorite, addToFavorites, removeFavorite}
+	return { isFavorite, addToFavorites, removeFavorite }
 }
 
 export default useFavoritePets

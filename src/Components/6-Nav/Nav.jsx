@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Hide, HStack, IconButton, Image, Show, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react'
+import { Flex, Hide, HStack, IconButton, Image, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import logo from '../../Media/logo2.png'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'

@@ -1,9 +1,9 @@
 import React from 'react'
-import {Button, HStack, Icon, Td, Tr, useDisclosure} from '@chakra-ui/react'
-import {AiTwotoneLock} from 'react-icons/ai'
+import { Button, HStack, Icon, Td, Tr, useDisclosure } from '@chakra-ui/react'
+import { AiTwotoneLock } from 'react-icons/ai'
 import PetModalEdit from './12-PetModalEdit'
-const PetTableBody = ({pet}) => {
-	const {isOpen, onOpen, onClose} = useDisclosure()
+const PetTableBody = ({ pet }) => {
+	const { isOpen, onOpen, onClose } = useDisclosure()
 
 	return (
 		<>

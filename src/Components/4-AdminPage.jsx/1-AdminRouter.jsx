@@ -1,14 +1,14 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import authContext from '../../Context/AuthContext/AuthContext'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import AdminMain from './2-AdminMain'
-import {useEffect} from 'react'
-import {useState} from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 const AdminRouter = () => {
 	const [isAdmin, setIsAdmin] = useState(false)
 	const [adminLoading, setLoading] = useState(true)
-	const {isLoggedIn, userInfo} = useContext(authContext)
+	const { isLoggedIn, userInfo } = useContext(authContext)
 
 	const navigate = useNavigate()
 

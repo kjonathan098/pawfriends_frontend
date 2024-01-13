@@ -1,4 +1,4 @@
-import {useToast} from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react'
 import React from 'react'
 
 function useToastMessage() {
@@ -24,7 +24,7 @@ function useToastMessage() {
 			isClosable: true,
 		})
 	}
-	return {showToast, errorToast}
+	return { showToast, errorToast }
 }
 
 export default useToastMessage

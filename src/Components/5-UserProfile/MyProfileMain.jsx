@@ -1,19 +1,5 @@
 import React from 'react'
-import {
-	Button,
-	Flex,
-	FormControl,
-	FormLabel,
-	Heading,
-	Input,
-	Stack,
-	HStack,
-	Avatar,
-	Center,
-	Textarea,
-	Badge,
-	Spinner,
-} from '@chakra-ui/react'
+import { Button, Flex, FormControl, FormLabel, Heading, Input, Stack, HStack, Avatar, Center, Textarea, Badge, Spinner } from '@chakra-ui/react'
 import { useContext } from 'react'
 import authContext from '../../Context/AuthContext/AuthContext'
 import { useEffect } from 'react'
@@ -29,13 +15,7 @@ import apirUrl from '../../Utils/apiCall'
 
 const MyProfileMain = () => {
 	const { userInfo, loading } = useContext(authContext)
-	const {
-		data: user,
-		fetchLoading,
-		error,
-		reFetch,
-		setData,
-	} = useFetch(`${apirUrl}/api/user/${userInfo.uid}`)
+	const { data: user, fetchLoading, error, reFetch, setData } = useFetch(`${apirUrl}/api/user/${userInfo.uid}`)
 	const [values, handleChange, setState] = useForm()
 	const [updError, setUpdError] = useState()
 	const { showToast } = useToastMessage()
@@ -89,16 +69,7 @@ const MyProfileMain = () => {
 	return (
 		<Flex minH={'100vh'} align={'center'} justify={'center'} bg={'gray.50'}>
 			{values && (
-				<Stack
-					spacing={4}
-					w={'full'}
-					maxW={'md'}
-					bg={'white'}
-					rounded={'xl'}
-					boxShadow={'lg'}
-					p={6}
-					my={12}
-				>
+				<Stack spacing={4} w={'full'} maxW={'md'} bg={'white'} rounded={'xl'} boxShadow={'lg'} p={6} my={12}>
 					<Center>
 						<Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }}>
 							User Profile Edit
@@ -112,37 +83,16 @@ const MyProfileMain = () => {
 					<HStack>
 						<FormControl id="userName" isRequired>
 							<FormLabel>Name</FormLabel>
-							<Input
-								placeholder="UserName"
-								_placeholder={{ color: 'gray.500' }}
-								type="text"
-								name="name"
-								value={values.name}
-								onChange={handleChange}
-							/>
+							<Input placeholder="UserName" _placeholder={{ color: 'gray.500' }} type="text" name="name" value={values.name} onChange={handleChange} />
 						</FormControl>
 						<FormControl id="surName" isRequired>
 							<FormLabel>Sur-name</FormLabel>
-							<Input
-								placeholder="UserName"
-								_placeholder={{ color: 'gray.500' }}
-								type="text"
-								name="surName"
-								value={values.surName}
-								onChange={handleChange}
-							/>
+							<Input placeholder="UserName" _placeholder={{ color: 'gray.500' }} type="text" name="surName" value={values.surName} onChange={handleChange} />
 						</FormControl>
 					</HStack>
 					<FormControl id="email" isRequired>
 						<FormLabel>Email address</FormLabel>
-						<Input
-							placeholder="your-email@example.com"
-							_placeholder={{ color: 'gray.500' }}
-							type="email"
-							name="email"
-							value={values.email}
-							onChange={handleChange}
-						/>
+						<Input placeholder="your-email@example.com" _placeholder={{ color: 'gray.500' }} type="email" name="email" value={values.email} onChange={handleChange} />
 					</FormControl>
 
 					<FormControl id="password" isRequired>
@@ -150,25 +100,11 @@ const MyProfileMain = () => {
 					</FormControl>
 					<FormControl id="phone" isRequired>
 						<FormLabel>Phone</FormLabel>
-						<Input
-							placeholder="Phone"
-							_placeholder={{ color: 'gray.500' }}
-							type="number"
-							name="phone"
-							value={values.phone}
-							onChange={handleChange}
-						/>
+						<Input placeholder="Phone" _placeholder={{ color: 'gray.500' }} type="number" name="phone" value={values.phone} onChange={handleChange} />
 					</FormControl>
 					<FormControl id="Bio">
 						<FormLabel>Bio</FormLabel>
-						<Textarea
-							placeholder="Bio"
-							_placeholder={{ color: 'gray.500' }}
-							type="text"
-							name="bio"
-							value={values.bio}
-							onChange={handleChange}
-						/>
+						<Textarea placeholder="Bio" _placeholder={{ color: 'gray.500' }} type="text" name="bio" value={values.bio} onChange={handleChange} />
 					</FormControl>
 					{updError && (
 						<Badge colorScheme="red" align={'center'}>

@@ -1,10 +1,10 @@
 import React from 'react'
-import {Heading, Avatar, Box, useColorModeValue, Modal, ModalOverlay, ModalContent, ModalBody, Tabs, TabList, Tab, TabPanels, TabPanel, Flex} from '@chakra-ui/react'
+import { Heading, Avatar, Box, useColorModeValue, Modal, ModalOverlay, ModalContent, ModalBody, Tabs, TabList, Tab, TabPanels, TabPanel, Flex } from '@chakra-ui/react'
 import UserContactModal from './6-UserInfoModal'
 import UserPetsModal from './7-UserPetsModal'
 import avatarProfile from '../../../Media/avatarProfile.jpeg'
 
-const UserModal = ({user, isOpen, onClose}) => {
+const UserModal = ({ user, isOpen, onClose }) => {
 	return (
 		<Modal isOpen={isOpen} onClose={onClose} size={'xl'} isCentered>
 			{' '}

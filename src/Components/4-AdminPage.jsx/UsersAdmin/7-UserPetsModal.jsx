@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
-import {Table, Thead, Tbody, Tr, Th, Td, TableContainer} from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer } from '@chakra-ui/react'
 import useFetch from '../../../CustomHooks/apiCalls/useFetch'
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import usePetStatusTwo from '../../../CustomHooks/PetManipulation/usePetStatusTwo.js'
 import usePetType from '../../../CustomHooks/PetManipulation/usePetType'
 import apirUrl from '../../../Utils/apiCall'
 
-const UserPetsModal = ({user}) => {
-	const {data, fetchLoading, error, reFetch, setData} = useFetch(`${apirUrl}/api/pet/userPets/${user._id}`)
+const UserPetsModal = ({ user }) => {
+	const { data, fetchLoading } = useFetch(`${apirUrl}/api/pet/userPets/${user._id}`)
 
-	const {petStatusStringArray, petStatusloading, petStatusString} = usePetStatusTwo()
-	const {petTypeLoading, petTypeStringArray, handleType} = usePetType()
+	const { petStatusStringArray, petStatusloading, petStatusString } = usePetStatusTwo()
+	const { petTypeLoading, petTypeStringArray, handleType } = usePetType()
 	const [loading, setLoading] = useState(true)
 	const [userPets, setUserPets] = useState()
 

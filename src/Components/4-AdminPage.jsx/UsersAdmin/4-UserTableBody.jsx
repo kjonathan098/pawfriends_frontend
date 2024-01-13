@@ -1,10 +1,10 @@
-import {Button, HStack, Icon, Td, Tr, useDisclosure} from '@chakra-ui/react'
+import { Button, HStack, Icon, Td, Tr, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
-import {AiTwotoneLock} from 'react-icons/ai'
+import { AiTwotoneLock } from 'react-icons/ai'
 import UserModal from './5-UserModal'
 
-const UserTableBody = ({user}) => {
-	const {isOpen, onOpen, onClose} = useDisclosure()
+const UserTableBody = ({ user }) => {
+	const { isOpen, onOpen, onClose } = useDisclosure()
 
 	return (
 		<>

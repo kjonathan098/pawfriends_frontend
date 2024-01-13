@@ -1,11 +1,9 @@
 import axios from 'axios'
-import React, { useContext } from 'react'
+import React from 'react'
 import { useState } from 'react'
-import authContext from '../AuthContext'
 import petsContext from './PetsContex'
 import apirUrl from '../../../Utils/apiCall'
 const PetsProvider = ({ children }) => {
-	const { userInfo } = useContext(authContext)
 	const [userAdoptedPet, setUserAdoptedPet] = useState([])
 	const [userFavorites, setUserFavorites] = useState([])
 	const [loadingUserPets, setLoadingUserPets] = useState(true)

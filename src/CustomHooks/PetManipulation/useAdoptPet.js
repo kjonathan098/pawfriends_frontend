@@ -1,9 +1,9 @@
-import {useContext} from 'react'
+import { useContext } from 'react'
 import handlePetRequest from '../../Config/Pet.Config'
 import petsContext from '../../Context/AuthContext/PetsContext/PetsContex'
 
 function useAdoptPet(pet) {
-	const {userAdoptedPet, setUserAdoptedPet} = useContext(petsContext)
+	const { userAdoptedPet, setUserAdoptedPet } = useContext(petsContext)
 
 	const adoptPet = async () => {
 		const res = await handlePetRequest.adoptPet(pet)
@@ -37,7 +37,7 @@ function useAdoptPet(pet) {
 
 		return res
 	}
-	return {adoptPet, returnPet, fosterPet}
+	return { adoptPet, returnPet, fosterPet }
 }
 
 export default useAdoptPet

@@ -1,19 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Modal, ModalOverlay, ModalContent, Select, Box, Badge } from '@chakra-ui/react'
-import {
-	Button,
-	Flex,
-	FormControl,
-	FormLabel,
-	Heading,
-	Input,
-	Stack,
-	useColorModeValue,
-	HStack,
-	Avatar,
-	Center,
-	Textarea,
-} from '@chakra-ui/react'
+import { Button, Flex, FormControl, FormLabel, Heading, Input, Stack, useColorModeValue, HStack, Avatar, Center, Textarea } from '@chakra-ui/react'
 import useForm from '../../../CustomHooks/apiCalls/useForm'
 import useToastMessage from '../../../UI_Kit/ToastMessage'
 import { useEffect } from 'react'
@@ -85,16 +72,7 @@ const PetModalEdit = ({ isOpen, onClose, pet }) => {
 			<ModalOverlay />
 			<ModalContent>
 				<Flex align={'center'} justify={'center'} bg={useColorModeValue('gray.50', 'gray.800')}>
-					<Stack
-						spacing={4}
-						w={'full'}
-						maxW={'md'}
-						bg={useColorModeValue('white', 'gray.700')}
-						rounded={'xl'}
-						boxShadow={'lg'}
-						p={6}
-						my={4}
-					>
+					<Stack spacing={4} w={'full'} maxW={'md'} bg={useColorModeValue('white', 'gray.700')} rounded={'xl'} boxShadow={'lg'} p={6} my={4}>
 						<Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }}>
 							Edit Pet
 						</Heading>
@@ -102,10 +80,7 @@ const PetModalEdit = ({ isOpen, onClose, pet }) => {
 							<FormLabel>Change Pet Picture</FormLabel>
 							<Stack direction={['column', 'row']} spacing={6}>
 								<Center>
-									<Avatar
-										size="xl"
-										src={picPreview ? URL.createObjectURL(picPreview) : values.picture}
-									></Avatar>
+									<Avatar size="xl" src={picPreview ? URL.createObjectURL(picPreview) : values.picture}></Avatar>
 								</Center>
 								<Center w="full">
 									<Input
@@ -122,37 +97,20 @@ const PetModalEdit = ({ isOpen, onClose, pet }) => {
 						</FormControl>
 						<FormControl id="petName" isRequired>
 							<FormLabel>Pet name</FormLabel>
-							<Input
-								placeholder="Pet Name"
-								_placeholder={{ color: 'gray.500' }}
-								type="text"
-								name="name"
-								onChange={handleChange}
-								value={values.name}
-							/>
+							<Input placeholder="Pet Name" _placeholder={{ color: 'gray.500' }} type="text" name="name" onChange={handleChange} value={values.name} />
 						</FormControl>
 						<FormControl id="petType" isRequired>
 							<HStack w={'100%'}>
 								<Box w={'100%'}>
 									<FormLabel>Pet Type</FormLabel>
-									<Select
-										name="type"
-										onChange={handleChange}
-										placeholder="Select"
-										value={values.type}
-									>
+									<Select name="type" onChange={handleChange} placeholder="Select" value={values.type}>
 										<option value={1}>Dog</option>
 										<option value={2}>Cat</option>
 									</Select>
 								</Box>
 								<Box w={'100%'}>
 									<FormLabel>Status</FormLabel>
-									<Select
-										name="adoptionStatus"
-										onChange={handleChange}
-										placeholder="Select"
-										value={values.adoptionStatus}
-									>
+									<Select name="adoptionStatus" onChange={handleChange} placeholder="Select" value={values.adoptionStatus}>
 										<option value={0}>Available</option>
 										<option value={1}>Fostered</option>
 										<option value={2}>Adopted</option>
@@ -162,85 +120,38 @@ const PetModalEdit = ({ isOpen, onClose, pet }) => {
 						</FormControl>
 						<FormControl id="breed" isRequired>
 							<FormLabel>Breed</FormLabel>
-							<Input
-								placeholder="Breed"
-								_placeholder={{ color: 'gray.500' }}
-								type="text"
-								name="breed"
-								onChange={handleChange}
-								value={values.breed}
-							/>
+							<Input placeholder="Breed" _placeholder={{ color: 'gray.500' }} type="text" name="breed" onChange={handleChange} value={values.breed} />
 						</FormControl>
 						<FormControl id="color" isRequired>
 							<FormLabel>Color</FormLabel>
-							<Input
-								placeholder="Color"
-								_placeholder={{ color: 'gray.500' }}
-								type="text"
-								name="color"
-								onChange={handleChange}
-								value={values.color}
-							/>
+							<Input placeholder="Color" _placeholder={{ color: 'gray.500' }} type="text" name="color" onChange={handleChange} value={values.color} />
 						</FormControl>
 						<FormControl id="height" isRequired>
 							<HStack w={'100%'}>
 								<Box w={'100%'}>
 									<FormLabel>Height cm</FormLabel>
-									<Input
-										placeholder="weight"
-										_placeholder={{ color: 'gray.500' }}
-										type="number"
-										name="height"
-										onChange={handleChange}
-										value={values.height}
-									/>
+									<Input placeholder="weight" _placeholder={{ color: 'gray.500' }} type="number" name="height" onChange={handleChange} value={values.height} />
 								</Box>
 								<Box w={'100%'}>
 									<FormLabel>Weight lbs</FormLabel>
-									<Input
-										placeholder="Height"
-										_placeholder={{ color: 'gray.500' }}
-										type="number"
-										name="weight"
-										onChange={handleChange}
-										value={values.weight}
-									/>
+									<Input placeholder="Height" _placeholder={{ color: 'gray.500' }} type="number" name="weight" onChange={handleChange} value={values.weight} />
 								</Box>
 							</HStack>
 						</FormControl>
 						<FormControl id="allergic" isRequired>
 							<FormLabel>Hypoallergic</FormLabel>
-							<Select
-								name="hypoallergenic"
-								onChange={handleChange}
-								placeholder="Select"
-								value={values.hypoallergenic}
-							>
+							<Select name="hypoallergenic" onChange={handleChange} placeholder="Select" value={values.hypoallergenic}>
 								<option value={false}>No</option>
 								<option value={true}>Yes</option>
 							</Select>{' '}
 						</FormControl>
 						<FormControl id="diet" isRequired>
 							<FormLabel>Dietary Restrictions</FormLabel>
-							<Textarea
-								placeholder="Dietary Restrictions"
-								_placeholder={{ color: 'gray.500' }}
-								type="text"
-								name="dietaryRestrictions"
-								onChange={handleChange}
-								value={values.dietaryRestrictions}
-							/>
+							<Textarea placeholder="Dietary Restrictions" _placeholder={{ color: 'gray.500' }} type="text" name="dietaryRestrictions" onChange={handleChange} value={values.dietaryRestrictions} />
 						</FormControl>
 						<FormControl id="bio">
 							<FormLabel>Bio</FormLabel>
-							<Textarea
-								placeholder="Bio"
-								_placeholder={{ color: 'gray.500' }}
-								type="text"
-								name="bio"
-								onChange={handleChange}
-								value={values.bio}
-							/>
+							<Textarea placeholder="Bio" _placeholder={{ color: 'gray.500' }} type="text" name="bio" onChange={handleChange} value={values.bio} />
 						</FormControl>
 						{error && (
 							<Badge colorScheme="red" align={'center'}>

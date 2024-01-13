@@ -1,33 +1,16 @@
-import {
-	Flex,
-	Box,
-	FormControl,
-	FormLabel,
-	Input,
-	Stack,
-	Link,
-	Button,
-	Heading,
-	Text,
-	useColorModeValue,
-	Badge,
-	useToast,
-	VStack,
-	HStack,
-} from '@chakra-ui/react'
+import { Flex, Box, FormControl, FormLabel, Input, Stack, Link, Button, Heading, Text, useColorModeValue, Badge, useToast, VStack } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { useState } from 'react'
 import userConfig from '../../Config/User.Config'
 import authContext from '../../Context/AuthContext/AuthContext'
 import loginModalContext from '../../Context/AuthContext/LoginModalContext/LoginModalContext'
 import useForm from '../../CustomHooks/apiCalls/useForm'
-import toastMessage from '../../UI_Kit/ToastMessage'
 import DemoAccount from './DemoAccount'
 
 const LoginForm = ({ setFormContent }) => {
 	const { setUserInfo, setIsLoggedIn } = useContext(authContext)
 	const { onClose } = useContext(loginModalContext)
-	let [values, handleChange, setState] = useForm()
+	let [values, handleChange] = useForm()
 	const [error, setError] = useState()
 	const [loading, setLoading] = useState()
 	const toast = useToast()
@@ -59,12 +42,7 @@ const LoginForm = ({ setFormContent }) => {
 		setLoading(false)
 	}
 	return (
-		<Flex
-			minH={'75vh'}
-			align={'center'}
-			justify={'center'}
-			bg={useColorModeValue('gray.50', 'gray.800')}
-		>
+		<Flex minH={'75vh'} align={'center'} justify={'center'} bg={useColorModeValue('gray.50', 'gray.800')}>
 			<Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
 				<Stack align={'center'}>
 					<Heading fontSize={'4xl'}>Sign in to your account</Heading>
@@ -102,16 +80,10 @@ const LoginForm = ({ setFormContent }) => {
 								Sign in
 							</Button>
 
-							<Text align={'center'}>
-								Or click here to sign in to our demo account and view all features{' '}
-							</Text>
+							<Text align={'center'}>Or click here to sign in to our demo account and view all features </Text>
 							<DemoAccount handleLogin={handleLogin} loading={loading} />
 						</VStack>
-						<Stack
-							direction={{ base: 'column', sm: 'row' }}
-							align={'start'}
-							justify={'space-between'}
-						>
+						<Stack direction={{ base: 'column', sm: 'row' }} align={'start'} justify={'space-between'}>
 							<Text align={'center'}>
 								New User?
 								<Link

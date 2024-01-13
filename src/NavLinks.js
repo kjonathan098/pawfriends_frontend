@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink, Route, Routes} from 'react-router-dom'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import HomeLogin from './Components/1-Home/HomeLogin'
 import HomeLogout from './Components/1-Home/HomeLogout'
 import AuthRoute from './Components/3-AuthRoute/AuthRoute'

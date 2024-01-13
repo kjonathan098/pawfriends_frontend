@@ -1,15 +1,4 @@
-import {
-	Box,
-	Avatar,
-	Button,
-	Menu,
-	MenuButton,
-	MenuList,
-	MenuItem,
-	MenuDivider,
-	Center,
-	useToast,
-} from '@chakra-ui/react'
+import { Box, Avatar, Button, Menu, MenuButton, MenuList, MenuItem, MenuDivider, Center, useToast } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useContext } from 'react'
 import authContext from '../Context/AuthContext/AuthContext'
@@ -79,15 +68,7 @@ const AuthButton = () => {
 					<MenuDivider />
 					<MenuItem>
 						<Center width={'100%'}>
-							<Box
-								as="button"
-								bg={'red.400'}
-								rounded={'full'}
-								color={'white'}
-								_hover={{ bg: 'red.500' }}
-								w={'80%'}
-								onClick={handleLogout}
-							>
+							<Box as="button" bg={'red.400'} rounded={'full'} color={'white'} _hover={{ bg: 'red.500' }} w={'80%'} onClick={handleLogout}>
 								Logout
 							</Box>
 						</Center>
@@ -97,13 +78,7 @@ const AuthButton = () => {
 		)
 
 	return (
-		<Button
-			bg={'green.400'}
-			rounded={'full'}
-			color={'white'}
-			_hover={{ bg: 'green.500' }}
-			onClick={onOpen}
-		>
+		<Button bg={'green.400'} rounded={'full'} color={'white'} _hover={{ bg: 'green.500' }} onClick={onOpen}>
 			Login
 		</Button>
 	)

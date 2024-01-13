@@ -1,7 +1,7 @@
 import './App.css'
 import Home from './Components/1-Home/HomeRouter'
 import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
-import { Box, Flex, HStack, IconButton, Image, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, HStack, IconButton, Image, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react'
 import AuthProvider from './Context/AuthContext/AuthProvider'
 import AuthButton from './UI_Kit/Loggin.Logout.Btn'
 import PetsMain from './Components/2-Pets/1-PetsMain'
@@ -14,16 +14,15 @@ import MyProfileMain from './Components/5-UserProfile/MyProfileMain'
 import Nav from './Components/6-Nav/Nav'
 
 function App() {
-	const nav = useNavigate()
-	const { isOpen, onOpen, onClose } = useDisclosure()
-
 	return (
 		<AuthProvider>
 			<LoginModalProvider>
 				<PetsProvider>
-					<Box>
-						<Nav />
-						<div>
+					<Grid templateRows="auto 1fr" minH={'100vh'}>
+						<GridItem h={'fit-content'}>
+							<Nav />
+						</GridItem>
+						<GridItem h={'100%'}>
 							<Routes>
 								<Route path="/" element={<Home />} />
 								<Route path="/pets" element={<PetsMain />} />
@@ -44,8 +43,8 @@ function App() {
 									}
 								/>
 							</Routes>
-						</div>
-					</Box>
+						</GridItem>
+					</Grid>
 				</PetsProvider>
 				<AuthModal />
 			</LoginModalProvider>

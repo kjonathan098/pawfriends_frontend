@@ -45,15 +45,27 @@ const Nav = () => {
 			</HStack>
 
 			{isOpen ? (
-				<VStack display={{ md: 'none' }} bg={'gray.100'} position={'absolute'} w={'100vw'} p={1}>
+				<VStack display={{ lg: 'none' }} bg={'gray.100'} position={'absolute'} w={'100vw'} p={1}>
 					<Stack as={'nav'} h={'100%'}>
 						<Flex justifyContent={'center'} _hover={{ bg: 'gray.200' }}>
-							<NavLink to="/" className="navLkink">
+							<NavLink
+								to="/"
+								className="navLkink"
+								onClick={() => {
+									onClose()
+								}}
+							>
 								Home
 							</NavLink>
 						</Flex>
 						<Flex justifyContent={'center'} _hover={{ bg: 'gray.200' }}>
-							<NavLink to="/pets" className="navLkink">
+							<NavLink
+								to="/pets"
+								className="navLkink"
+								onClick={() => {
+									onClose()
+								}}
+							>
 								Pets
 							</NavLink>
 						</Flex>

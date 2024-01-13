@@ -1,27 +1,27 @@
-import {Badge, Button, Center, Flex, Heading, Image, Stack, Text, Tooltip, IconButton} from '@chakra-ui/react'
-import {StarIcon} from '@chakra-ui/icons'
-import React, {useContext, useState} from 'react'
+import { Badge, Button, Center, Flex, Heading, Image, Stack, Text, Tooltip, IconButton } from '@chakra-ui/react'
+import { StarIcon } from '@chakra-ui/icons'
+import React, { useContext, useState } from 'react'
 import authContext from '../../Context/AuthContext/AuthContext'
 import loginModalContext from '../../Context/AuthContext/LoginModalContext/LoginModalContext'
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import useFavoritePets from '../../CustomHooks/PetManipulation/useFavoritePets'
 import useAdoptPet from '../../CustomHooks/PetManipulation/useAdoptPet'
 import useToastMessage from '../../UI_Kit/ToastMessage'
 import useModalButtons from '../../CustomHooks/PetManipulation/useModalButtons'
 import usePetType from '../../CustomHooks/PetManipulation/usePetType'
 
-const PetModal = ({pet}) => {
-	const {isLoggedIn, loading} = useContext(authContext)
+const PetModal = ({ pet }) => {
+	const { isLoggedIn, loading } = useContext(authContext)
 	const [error] = useState()
 
-	const {onOpen} = useContext(loginModalContext)
+	const { onOpen } = useContext(loginModalContext)
 
-	const {isFavorite, addToFavorites, removeFavorite} = useFavoritePets(pet)
-	const {fosterBtnDis, adoptBtnDis, returnBtnDis} = useModalButtons(pet)
-	const {adoptPet, returnPet, fosterPet} = useAdoptPet(pet)
-	const {showToast, errorToast} = useToastMessage()
+	const { isFavorite, addToFavorites, removeFavorite } = useFavoritePets(pet)
+	const { fosterBtnDis, adoptBtnDis, returnBtnDis } = useModalButtons(pet)
+	const { adoptPet, returnPet, fosterPet } = useAdoptPet(pet)
+	const { showToast, errorToast } = useToastMessage()
 
-	const {handleType, petTypeLoading} = usePetType()
+	const { handleType, petTypeLoading } = usePetType()
 	useEffect(() => {
 		handleType([pet])
 	}, [])
@@ -63,7 +63,7 @@ const PetModal = ({pet}) => {
 	if (loading || petTypeLoading) return <div>Loading...</div>
 	return (
 		<Center py={6}>
-			<Stack borderWidth="1px" borderRadius="lg" w={{sm: '100%', md: '540px'}} height={{sm: '476px', md: '20rem'}} direction={{base: 'column', md: 'row'}} bg={'white'} boxShadow={'2xl'} padding={4}>
+			<Stack borderWidth="1px" borderRadius="lg" w={{ sm: '100%', md: '540px' }} height={{ sm: '476px', md: '20rem' }} direction={{ base: 'column', md: 'row' }} bg={'white'} boxShadow={'2xl'} padding={4}>
 				<Flex flex={1} bg="blue.200">
 					<Image objectFit="cover" boxSize="100%" src={pet.picture} />
 				</Flex>

@@ -1,14 +1,4 @@
-import {
-	Button,
-	Flex,
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-	Select,
-	Tooltip,
-	useBoolean,
-	VStack,
-} from '@chakra-ui/react'
+import { Button, Flex, Popover, PopoverContent, PopoverTrigger, Select, Tooltip, useBoolean, VStack } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { SearchIcon } from '@chakra-ui/icons'
 import AdvanceSearch from './AdvanceSearch'
@@ -43,7 +33,7 @@ const SearchBarMain = () => {
 							</Tooltip>
 						</Flex>
 					</PopoverTrigger>
-					<PopoverContent w={{ md: `800px`, sm: '400px' }} padding={5}>
+					<PopoverContent w={{ base: '100vw', lg: `800px` }} padding={{ base: 1, md: 5 }} border={'2px'} borderColor={'green.300'}>
 						<AdvanceSearch setFlag={setFlag} />
 					</PopoverContent>
 				</Popover>

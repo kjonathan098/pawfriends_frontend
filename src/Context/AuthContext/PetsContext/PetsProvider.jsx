@@ -12,6 +12,7 @@ const PetsProvider = ({ children }) => {
 	const [allPets, setAllPets] = useState([])
 	const [error, setError] = useState()
 	const [loading, setLoading] = useState(true)
+	const [queryLoading, setqueryLoading] = useState(false)
 
 	const fetchAll = async () => {
 		try {
@@ -45,6 +46,7 @@ const PetsProvider = ({ children }) => {
 
 	// Change Pets display according to query
 	const fetchQuery = async (qObject) => {
+		setqueryLoading(true)
 		try {
 			const qResponse = await axios.get(`${apirUrl}/api/pet/query`, qObject)
 			if (!qResponse.data.length) return false
@@ -52,6 +54,7 @@ const PetsProvider = ({ children }) => {
 			return true
 		} catch (error) {
 		} finally {
+			setqueryLoading(false)
 		}
 	}
 
@@ -69,6 +72,7 @@ const PetsProvider = ({ children }) => {
 				fetchAll,
 				loading,
 				fetchUserPets,
+				queryLoading,
 			}}
 		>
 			{children}

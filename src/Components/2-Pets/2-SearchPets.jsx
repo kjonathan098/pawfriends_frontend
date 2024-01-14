@@ -11,6 +11,7 @@ const SearchPets = () => {
 	useEffect(() => {
 		fetchAll()
 	}, [])
+
 	if (loading)
 		return (
 			<Center>

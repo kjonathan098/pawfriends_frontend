@@ -6,8 +6,8 @@ import MyFavorites from './4-MyFavorites'
 
 const PetsMain = () => {
 	return (
-		<Flex justifyContent={'center'} h="100vh">
-			<Tabs variant="soft-rounded" colorScheme="green" mt={'10'} width={'100%'} justifyContent={'center'}>
+		<Flex justifyContent={'center'}>
+			<Tabs variant="soft-rounded" colorScheme="green" mt={'10'} w={'100%'} justifyContent={'center'}>
 				<TabList justifyContent={'center'}>
 					<Tab>Search Pets</Tab>
 					<Tab>My Pets</Tab>

@@ -25,7 +25,7 @@ const PetsCardsDisplay = ({ pet }) => {
 					<Button onClick={onOpen} bg={'green.400'} rounded={'full'} color={'white'} _hover={{ bg: 'green.500' }} boxShadow="xl" mt={'2'}>
 						View More
 					</Button>
-					<Modal isOpen={isOpen} onClose={onClose} size={'xl'} isCentered>
+					<Modal isOpen={isOpen} onClose={onClose} size={'xl'} isCentered scrollBehavior="inside">
 						<ModalOverlay />
 						<ModalContent>
 							<ModalBody>

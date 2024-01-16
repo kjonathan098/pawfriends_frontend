@@ -1,9 +1,9 @@
 import React from 'react'
-import {useEffect} from 'react'
-import {useState} from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 import authContext from './AuthContext'
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 	const [isLoggedIn, setIsLoggedIn] = useState()
 	const [loading, setLoading] = useState(true)
 	const [userInfo, setUserInfo] = useState()
@@ -22,7 +22,7 @@ const AuthProvider = ({children}) => {
 		return () => {}
 	}, [])
 
-	return <authContext.Provider value={{isLoggedIn, loading, setLoading, userInfo, setUserInfo, setIsLoggedIn}}>{children}</authContext.Provider>
+	return <authContext.Provider value={{ isLoggedIn, loading, setLoading, userInfo, setUserInfo, setIsLoggedIn }}>{children}</authContext.Provider>
 }
 
 export default AuthProvider

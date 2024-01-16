@@ -16,7 +16,6 @@ const AdvanceSearch = ({ setFlag }) => {
 	const { errorToast } = useToastMessage()
 
 	const handleQuery = async (e) => {
-		console.log('hero')
 		const params = {
 			name: values.name,
 			type: values.type,

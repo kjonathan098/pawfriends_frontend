@@ -42,7 +42,7 @@ const MyProfileMain = () => {
 		if (values.name !== user.data.name) finalUpdObj.name = values.name
 		if (values.surName !== user.data.surName) finalUpdObj.surName = values.surName
 		if (values.email !== user.data.email) finalUpdObj.email = values.email
-		if (values.phone != user.data.phone) finalUpdObj.phone = values.phone
+		if (values.phone !== user.data.phone) finalUpdObj.phone = values.phone
 		if (values.bio !== user.data.bio) finalUpdObj.bio = values.bio
 
 		if (Object.keys(finalUpdObj).length === 0) return setUpdError('No changes were detected')

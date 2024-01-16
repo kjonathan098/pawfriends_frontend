@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import authContext from '../../Context/AuthContext/AuthContext'
-import heroLoggedIn from '../../Media/HerUser.jpeg'
+import heroLoggedIn from '../../Media/HomeUserBanner.jpg'
 import { Stack, Flex, Button, Text, VStack } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
@@ -21,7 +21,7 @@ const HomeUser = () => {
 					</Text>
 					<Stack direction={'row'}>
 						<Button
-							bg={'green.400'}
+							bg={'green.900'}
 							rounded={'full'}
 							color={'white'}
 							_hover={{ bg: 'green.500' }}

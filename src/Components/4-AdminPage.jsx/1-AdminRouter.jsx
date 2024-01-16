@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import AdminMain from './2-AdminMain'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { Center, Spinner } from '@chakra-ui/react'
 
 const AdminRouter = () => {
 	const [isAdmin, setIsAdmin] = useState(false)
@@ -22,7 +23,7 @@ const AdminRouter = () => {
 		setLoading(false)
 	}, [isLoggedIn])
 
-	if (adminLoading) return <>Loading.. </>
+	if (adminLoading) return <></>
 
 	return <AdminMain />
 }

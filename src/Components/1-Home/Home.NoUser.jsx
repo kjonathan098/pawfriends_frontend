@@ -3,7 +3,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import authContext from '../../Context/AuthContext/AuthContext'
-import heroNoUser from '../../Media/HeroNoUser.jpeg'
+import heroNoUser from '../../Media/HomeNoUserBanner.jpg'
 
 const HomeNoUser = () => {
 	const { loading } = useContext(authContext)
@@ -19,11 +19,8 @@ const HomeNoUser = () => {
 						Find youre perfect paw-fwiend
 					</Text>
 					<Stack direction={'row'}>
-						<Button bg={'green.400'} rounded={'full'} color={'white'} _hover={{ bg: 'green.500' }} onClick={() => navigate('/pets')}>
+						<Button bg={'green.900'} rounded={'full'} color={'white'} _hover={{ bg: 'green.500' }} onClick={() => navigate('/pets')}>
 							Search Pets
-						</Button>
-						<Button bg={'whiteAlpha.300'} rounded={'full'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }}>
-							Show me more
 						</Button>
 					</Stack>
 				</Stack>

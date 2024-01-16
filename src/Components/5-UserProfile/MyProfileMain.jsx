@@ -15,12 +15,14 @@ import apirUrl from '../../Utils/apiCall'
 
 const MyProfileMain = () => {
 	const { userInfo, loading } = useContext(authContext)
-	const { data: user, fetchLoading, error, reFetch, setData } = useFetch(`${apirUrl}/api/user/${userInfo.uid}`)
+
+	const { data: user, fetchLoading, error } = useFetch(`${apirUrl}/api/user/${userInfo.uid}`)
 	const [values, handleChange, setState] = useForm()
 	const [updError, setUpdError] = useState()
-	const { showToast } = useToastMessage()
-	// const [load, setLoad] = useState(true)
+	const { showToast, errorToast } = useToastMessage()
 
+	// This is the set useForm hook
+	// it handles forms input changes without having to write a state for each one in the component
 	const initialState = { name: '', surName: '', email: '', password: '', phone: '', bio: '' }
 
 	useEffect(() => {
@@ -36,6 +38,8 @@ const MyProfileMain = () => {
 
 	const update = async () => {
 		setUpdError()
+		if (user.data.permissions === 1) return errorToast('Demo Account not allowed to make changes')
+
 		const finalUpdObj = {}
 
 		// if values are not equal to those in DB then populate query obj

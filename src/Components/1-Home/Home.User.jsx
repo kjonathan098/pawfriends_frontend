@@ -10,7 +10,7 @@ const HomeUser = () => {
 
 	if (loading) return <>loading...</>
 	return (
-		<Flex w={'full'} h={'100vh'} backgroundImage={heroLoggedIn} backgroundSize={'cover'} backgroundPosition={'center center'}>
+		<Flex w={'full'} h={{ base: '85vh', lg: '88vh' }} backgroundImage={heroLoggedIn} backgroundSize={'cover'} backgroundPosition={'center center'}>
 			<VStack w={'full'} justify={'center'} px={{ base: 4, md: 8 }} bgGradient={'linear(to-r, blackAlpha.400, transparent)'}>
 				<Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
 					<Text color={'white'} fontWeight={900} lineHeight={1.2} fontSize={{ base: '5xl', md: '7xl' }}>
